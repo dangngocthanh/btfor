@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rwed</title>
+</head>
+<body>
+<button onclick="okok()">Chơi</button>
+<script>
+    function okok() {
+        let min = +prompt('bạn muốn đoán trong khoảng từ: ')
+        let max = +prompt('đến')
+        let a = +prompt('số bạn đoán là:  ')
+        let b = Math.floor(Math.random() * (max - min) + min)
+        for (let i = 1; i <= 3;) {
+            if (a > b) {
+                alert('Lớn hơn mất rồi')
+                if (i===3) break
+                a = +prompt('số bạn đoán là:  ')
+                i++
+            }
+            if (a < b) {
+                alert('Ôi không! bạn đã chọn một số nhỏ hơn')
+                if (i===3) break
+                a = +prompt('số bạn đoán là:  ')
+                i++
+            }
+            if (a == b) {
+                alert('Chúc mừng bạn, bạn đã chiến thắng')
+                break
+            }
+        }
+    }
+</script>
+</body>
+</html>
